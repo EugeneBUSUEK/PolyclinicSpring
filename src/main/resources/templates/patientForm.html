@@ -1,0 +1,21 @@
+<form th:action="@{/patient/new}" th:object="${patient}" method="post">
+
+    <input type="text" th:field="*{firstName}" placeholder="Введите имя">
+    <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+
+    <input type="text" th:field="*{lastName}" placeholder="Введите фамилию">
+    <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+
+    <input type="text" th:field="*{birthDate}" placeholder="Введите дату рождения">
+    <!--    <p th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></p>-->
+
+    <input type="text" th:field="*{phoneNumber}" placeholder="Введите номер телефона">
+    <!--    <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>-->
+
+    <input type="text" th:field="*{address}" placeholder="Введите адресс проживания">
+    <!--    <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>-->
+
+    <!-- дополнительные поля... -->
+
+    <input type="submit" value="Добавить пациента">
+</form>
