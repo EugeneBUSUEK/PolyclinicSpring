@@ -41,8 +41,8 @@ public class HomeController {
                 patient.getFirstName(),
                 patient.getLastName(),
                 patient.getBirthDate(),
-                patient != null ? patient.getPhoneNumber() : null,
-                patient != null ? patient.getAddress() : null
+                patient.getPhoneNumber() != null ? patient.getPhoneNumber() : null,
+                patient.getAddress() != null ? patient.getAddress() : null
         ));
         // сохраните объект patient, например, в базе данных
 
