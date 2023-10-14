@@ -1,21 +1,57 @@
-<form th:action="@{/patient/new}" th:object="${patient}" method="post">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <a th:href="@{/home}">
+        <button type="button" class="btn btn-primary btn-sm md-1">На главную</button>
+    </a>
 
-    <input type="text" th:field="*{firstName}" placeholder="Введите имя">
-    <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+    <form th:action="@{/patient/new}" th:object="${patient}" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Введите имя</label>
+            <input type="text" th:field="*{firstName}" class="form-control" id="exampleInputEmail1"
+                   placeholder="Введите имя">
+            <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+        </div>
 
-    <input type="text" th:field="*{lastName}" placeholder="Введите фамилию">
-    <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+        <div class="form-group">
+            <label for="exampleInputEmail2">Введите имя</label>
+            <input type="text" th:field="*{lastName}" class="form-control" id="exampleInputEmail2"
+                   placeholder="Введите имя">
+            <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+        </div>
 
-    <input type="text" th:field="*{birthDate}" placeholder="Введите дату рождения">
-    <!--    <p th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></p>-->
+        <div class="form-group">
+            <label for="exampleInputEmail3">Введите имя</label>
+            <input type="text" th:field="*{birthDate}" class="form-control" id="exampleInputEmail3"
+                   placeholder="Введите имя">
+            <p th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></p>
+        </div>
 
-    <input type="text" th:field="*{phoneNumber}" placeholder="Введите номер телефона">
-    <!--    <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>-->
+        <div class="form-group">
+            <label for="exampleInputEmail4">Введите имя</label>
+            <input type="text" th:field="*{phoneNumber}" class="form-control" id="exampleInputEmail4"
+                   placeholder="Введите имя">
+            <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
+        </div>
 
-    <input type="text" th:field="*{address}" placeholder="Введите адресс проживания">
-    <!--    <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>-->
+        <div class="form-group">
+            <label for="exampleInputEmail5">Введите имя</label>
+            <input type="text" th:field="*{address}" class="form-control" id="exampleInputEmail5"
+                   placeholder="Введите имя">
+            <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
+        </div>
 
-    <!-- дополнительные поля... -->
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Добавить пациента</button>
 
-    <input type="submit" value="Добавить пациента">
-</form>
+    </form>
+</div>
+</body>
+</html>
