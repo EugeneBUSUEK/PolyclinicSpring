@@ -15,6 +15,20 @@
 
     <form th:action="@{/patient/new}" th:object="${patient}" method="post">
         <div class="form-group">
+            <label for="exampleInputEmail6">Введите логин</label>
+            <input type="text" th:field="*{username}" class="form-control" id="exampleInputEmail6"
+                   placeholder="Введите имя">
+            <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail7">Введите пароль</label>
+            <input type="text" th:field="*{password}" class="form-control" id="exampleInputEmail7"
+                   placeholder="Введите имя">
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+        </div>
+
+        <div class="form-group">
             <label for="exampleInputEmail1">Введите имя</label>
             <input type="text" th:field="*{firstName}" class="form-control" id="exampleInputEmail1"
                    placeholder="Введите имя">

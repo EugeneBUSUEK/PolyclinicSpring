@@ -1,7 +1,8 @@
 package com.example.polyclinic.model;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
+
+import javax.validation.constraints.NotBlank;
 
 @Builder
 @Getter
@@ -9,6 +10,10 @@ import lombok.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 public class Patient {
+    @NotBlank(message = "This field should not be empty")
+    private String username;
+    @NotBlank(message = "This field should not be empty")
+    private String password;
     @NotBlank(message = "This field should not be empty")
     private String firstName;
     @NotBlank(message = "This field should not be empty")
