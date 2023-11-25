@@ -9,6 +9,9 @@
 </head>
 <body>
 <div class="container">
+    <form action="/logout" method="post">
+        <button type="submit" class="btn btn-primary btn-sm md-1">Выйти</button>
+    </form>
     <h2>Добро пожаловать в нашу поликлинику!</h2>
 
     <p th:text="${message}"></p>
